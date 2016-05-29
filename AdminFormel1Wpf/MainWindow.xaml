@@ -1,0 +1,481 @@
+﻿<Window x:Class="AdminFormel1Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdminFormel1Wpf"
+        mc:Ignorable="d"
+        Title="Administration af Formel 1 " Height="580" Width="860">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="75"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style x:Key="{x:Type Label}" TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+
+        <Style TargetType="GroupBox">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="BorderThickness" Value="2"/>
+     </Style>
+    </Window.Resources>
+
+    <Grid Background="LightSkyBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=" 275"/>
+            <ColumnDefinition Width=" 275"/>
+            <ColumnDefinition Width=" 275"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="130" />
+            <RowDefinition Height="160" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label
+            x:Name="lblHead"
+            Content="Opdatering af Formel 1 database"
+            FontSize="20" 
+            FontWeight="Bold" 
+            Grid.Column=" 0" 
+            Grid.Row="0"  
+            Grid.ColumnSpan="2"/>
+
+        <!--Dette er year -->
+        <GroupBox 
+            Grid.Column="0" 
+            Grid.Row="1">
+            <GroupBox.Header>
+                <Label 
+                    FontSize="12" 
+                    FontStyle="Oblique" 
+                    FontWeight="Bold">Year
+                </Label>
+            </GroupBox.Header>
+
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="40 "/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Label 
+                    x:Name="lblYear" 
+                    Content=" År" 
+                    Grid.Column=" 0" 
+                    Grid.Row="0" 
+                    Margin="5"/>
+                <TextBox 
+                    x:Name="txtBoxYear" 
+                    Grid.Column=" 1" 
+                    Grid.Row="0" 
+                    Margin="5"/>
+                <StackPanel 
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
+
+                    <Button 
+                        x:Name="btnYearInsert"
+                        Content="Insert"/>
+                    <Button 
+                        x:Name="btnYearDelete"
+                        Content="Delete"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+
+        <!--Dette er Team-->
+        <GroupBox 
+            Grid.Column="0"
+                  Grid.Row="2">
+            <GroupBox.Header>
+                <Label 
+                    FontSize="12" 
+                    FontStyle="Oblique" 
+                    FontWeight="Bold">Team
+                </Label>
+            </GroupBox.Header>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="55"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Label 
+                    x:Name="lblTeam" 
+                    Content="Team" 
+                    Grid.Column=" 0" 
+                    Grid.Row="0" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtTeam" 
+                    Grid.Column=" 1" 
+                    Grid.Row="0" 
+                    Margin="5" />
+                <Label 
+                    x:Name="lblEngineSupplier" 
+                    Content="Engine" 
+                    Grid.Column=" 0" 
+                    Grid.Row="1" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtEngineSupplier" 
+                    Grid.Column=" 1" 
+                    Grid.Row="1" 
+                    Margin="5" />
+                <StackPanel 
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal"
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2">
+                    <Button
+                        x:Name="btnAgeInsert"
+                        Content="Insert"/>
+                    <Button 
+                        x:Name="btnAgeDelete" 
+                        Content="Delete" />
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+
+        <!--Dette er Driver-->
+        <GroupBox
+            Grid.Column=" 0"
+            Grid.Row="3">
+
+            <GroupBox.Header>
+                <Label 
+                    FontSize="12" 
+                    FontStyle="Oblique" 
+                    FontWeight="Bold">Driver
+                </Label>
+            </GroupBox.Header>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="55 "/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label 
+                    x:Name="lblDriver"
+                    Content="Driver"
+                    Grid.Column=" 0" 
+                    Grid.Row="0" 
+                    Margin="5"/>
+                <TextBox 
+                    x:Name="txtDriver" 
+                    Grid.Column=" 1"
+                    Grid.Row="0"
+                    Margin="5" />
+                <Label 
+                    x:Name="lblDriverName"
+                    Content="Name" 
+                    Grid.Column=" 0"
+                    Grid.Row="1"
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtDriverName" 
+                    Grid.Column=" 1" 
+                    Grid.Row="1" 
+                    Margin="5" />
+                <Label 
+                    x:Name="lblDriverCountry" 
+                    Content="Country" 
+                    Grid.Column=" 0"
+                    Grid.Row="2" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtDriverCountry" 
+                    Grid.Column=" 1"
+                    Grid.Row="2" 
+                    Margin="5" />
+                <StackPanel
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2">
+                    <Button 
+            x:Name="btnDriverInsert"
+            Content="Insert" />
+                    <Button 
+            x:Name="btnDriverDelete" 
+            Content="Delete"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+
+        <!--Dette er Race-->
+        <GroupBox
+            Grid.Column="1"
+            Grid.Row="1"
+            Grid.RowSpan="3">
+
+            <GroupBox.Header>
+                <Label 
+                    FontSize="12" 
+                    FontStyle="Oblique" 
+                    FontWeight="Bold">Race
+                </Label>
+            </GroupBox.Header>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="58" />
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Label 
+                    x:Name="lblRace" 
+                    Content="Race" 
+                    Grid.Column=" 0" 
+                    Grid.Row="0" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxRace" 
+                    Grid.Column=" 1" 
+                    Grid.Row="0" 
+                    Margin="5" />
+                <Label 
+                    x:Name="lblRaceName" 
+                    Content="Name" 
+                    Grid.Column=" 0"
+                    Grid.Row="1" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxRaceName" 
+                    Grid.Column=" 1" 
+                    Grid.Row="1" 
+                    Margin="5" />
+                <Label 
+                    x:Name="lblRaceCountry" 
+                    Content="Contry" 
+                    Grid.Column=" 0" 
+                    Grid.Row="2" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxRaceCountry" 
+                    Grid.Column=" 1" 
+                    Grid.Row="2" 
+                    Margin="5" />
+                <Label 
+                    x:Name="lblRaceDate" 
+                    Content="Date" 
+                    Grid.Column=" 0" 
+                    Grid.Row="3" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxRaceDate" 
+                    Grid.Column=" 1" 
+                    Grid.Row="3" 
+                    Margin="5"/>
+                <Label 
+                    x:Name="lblCircurtLength" 
+                    Content="Lenght" 
+                    Grid.Column=" 0" 
+                    Grid.Row="4" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxCircurtLength" 
+                    Grid.Column=" 1" 
+                    Grid.Row="4" Margin="5" />
+                <Label 
+                    x:Name="lblFileName" 
+                    Content="File" 
+                    Grid.Column=" 0" 
+                    Grid.Row="5" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxFileName" 
+                    Grid.Column=" 1" 
+                    Grid.Row="5" 
+                    Margin="5" />
+                <Label 
+                    x:Name="lblRaceResult"
+                    Content="Result" 
+                    Grid.Column=" 0" 
+                    Grid.Row="6" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxRaceResult" 
+                    Grid.Column=" 1" 
+                    Grid.Row="6" 
+                    Margin="5" />
+                <StackPanel
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal"
+                    Grid.Column="0"
+                    Grid.Row="7"
+                    Grid.ColumnSpan="2"
+                    Grid.RowSpan="2">
+
+                    <Button 
+                        x:Name="btnRaceInsert" 
+                        Content="Insert"/>
+                    <Button 
+                        x:Name="btnRaceDelete" 
+                        Content="Delete"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+
+        <!--Dette er Resultat-->
+        <GroupBox 
+            Grid.Column="2"
+            Grid.Row="1"
+            Grid.RowSpan="3">
+
+            <GroupBox.Header>
+                <Label 
+                    FontSize="12" 
+                    FontStyle="Oblique" 
+                    FontWeight="Bold">Result
+                </Label>
+            </GroupBox.Header>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="70" />
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                
+                <Label 
+                    x:Name="DriverId" 
+                    Content="DriverId" 
+                    Grid.Column=" 0" 
+                    Grid.Row="0" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxDriverId" 
+                    Grid.Column=" 1" 
+                    Grid.Row="0" 
+                    Margin="5" />
+                <Label 
+                    x:Name="TeamId" 
+                    Content="TeamId" 
+                    Grid.Column=" 0" 
+                    Grid.Row="1" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxTeamId" 
+                    Grid.Column=" 1" 
+                    Grid.Row="1" 
+                    Margin="5" />
+                <Label 
+                    x:Name="RaceTime" 
+                    Content="RaceTime" 
+                    Grid.Column=" 0" 
+                    Grid.Row="2" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxRaceTime" 
+                    Grid.Column=" 1" 
+                    Grid.Row="2" 
+                    Margin="5" />
+                <Label 
+                    x:Name="Point" 
+                    Content="Point" 
+                    Grid.Column=" 0" 
+                    Grid.Row="3" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxPoint" 
+                    Grid.Column=" 1" 
+                    Grid.Row="3" 
+                    Margin="5" />
+                <Label 
+                    x:Name="PlusLaps" 
+                    Content="PlusLaps" 
+                    Grid.Column=" 0" 
+                    Grid.Row="4" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxPlusLaps" 
+                    Grid.Column=" 1" 
+                    Grid.Row="4" 
+                    Margin="5" />
+                <Label 
+                    x:Name="RaceId" 
+                    Content="RaceId" 
+                    Grid.Column=" 0" 
+                    Grid.Row="5" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxRaceId" 
+                    Grid.Column=" 1" 
+                    Grid.Row="5" 
+                    Margin="5" />
+                <Label 
+                    x:Name="DNF" 
+                    Content="Udgået" 
+                    Grid.Column=" 0" 
+                    Grid.Row="6" 
+                    Margin="5" />
+                <TextBox 
+                    x:Name="txtBoxDNF" 
+                    Grid.Column=" 1" 
+                    Grid.Row="6" 
+                    Margin="5" />
+            
+                    <StackPanel
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal"
+                    Grid.Column="0"
+                    Grid.Row="7"
+                    Grid.ColumnSpan="2"
+                    Grid.RowSpan="2">
+
+                    <Button 
+                        x:Name="btnResultInsert" 
+                        Content="Insert"/>
+                    <Button 
+                        x:Name="btnResultDelete" 
+                        Content="Delete"/>
+
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
