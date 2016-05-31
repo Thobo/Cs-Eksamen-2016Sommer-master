@@ -22,7 +22,7 @@
         <Style TargetType="GroupBox">
             <Setter Property="Margin" Value="2"/>
             <Setter Property="BorderThickness" Value="2"/>
-     </Style>
+        </Style>
     </Window.Resources>
 
     <Grid Background="LightSkyBlue">
@@ -61,7 +61,7 @@
 
             <Grid >
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition MaxWidth="40 "/>
+                    <ColumnDefinition MaxWidth="62 "/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -76,10 +76,11 @@
                     Grid.Row="0" 
                     Margin="5"/>
                 <TextBox 
-                    x:Name="txtBoxYear" 
+                    x:Name="txtBoxYear"
                     Grid.Column=" 1" 
                     Grid.Row="0" 
                     Margin="5"/>
+
                 <StackPanel 
                     HorizontalAlignment="Center"
                     Orientation="Horizontal"
@@ -89,7 +90,7 @@
 
                     <Button 
                         x:Name="btnYearInsert"
-                        Content="Insert"/>
+                        Content="Insert" Click="btnYearInsert_Click"/>
                     <Button 
                         x:Name="btnYearDelete"
                         Content="Delete"/>
@@ -110,7 +111,7 @@
             </GroupBox.Header>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition MaxWidth="55"/>
+                    <ColumnDefinition MaxWidth="62"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -126,7 +127,7 @@
                     Grid.Row="0" 
                     Margin="5" />
                 <TextBox 
-                    x:Name="txtTeam" 
+                    x:Name="txtBoxTeam" 
                     Grid.Column=" 1" 
                     Grid.Row="0" 
                     Margin="5" />
@@ -137,7 +138,7 @@
                     Grid.Row="1" 
                     Margin="5" />
                 <TextBox 
-                    x:Name="txtEngineSupplier" 
+                    x:Name="txtBoxEngineSupplier" 
                     Grid.Column=" 1" 
                     Grid.Row="1" 
                     Margin="5" />
@@ -158,10 +159,10 @@
         </GroupBox>
 
         <!--Dette er Driver-->
-        <GroupBox
+        <GroupBox 
+            x:Name="grpBoxDriver"
             Grid.Column=" 0"
             Grid.Row="3">
-
             <GroupBox.Header>
                 <Label 
                     FontSize="12" 
@@ -171,7 +172,7 @@
             </GroupBox.Header>
             <Grid >
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition MaxWidth="55 "/>
+                    <ColumnDefinition MaxWidth="62 "/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -187,21 +188,20 @@
                     Grid.Row="0" 
                     Margin="5"/>
                 <TextBox 
-                    x:Name="txtDriver" 
                     Grid.Column=" 1"
                     Grid.Row="0"
-                    Margin="5" />
+                    Margin="5"/>
                 <Label 
-                    x:Name="lblDriverName"
-                    Content="Name" 
+                    x:Name="lblDriverAge"
+                    Content="Age" 
                     Grid.Column=" 0"
                     Grid.Row="1"
                     Margin="5" />
                 <TextBox 
-                    x:Name="txtDriverName" 
+                    x:Name="Age"
                     Grid.Column=" 1" 
                     Grid.Row="1" 
-                    Margin="5" />
+                    Margin="5"/>
                 <Label 
                     x:Name="lblDriverCountry" 
                     Content="Country" 
@@ -209,7 +209,7 @@
                     Grid.Row="2" 
                     Margin="5" />
                 <TextBox 
-                    x:Name="txtDriverCountry" 
+                    x:Name="txtBoxDriverCountry" 
                     Grid.Column=" 1"
                     Grid.Row="2" 
                     Margin="5" />
@@ -244,7 +244,7 @@
             </GroupBox.Header>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition MaxWidth="58" />
+                    <ColumnDefinition MaxWidth="62" />
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -282,7 +282,7 @@
                     Margin="5" />
                 <Label 
                     x:Name="lblRaceCountry" 
-                    Content="Contry" 
+                    Content="Country" 
                     Grid.Column=" 0" 
                     Grid.Row="2" 
                     Margin="5" />
@@ -367,7 +367,7 @@
             </GroupBox.Header>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition MaxWidth="70" />
+                    <ColumnDefinition MaxWidth="65" />
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -380,7 +380,7 @@
                     <RowDefinition />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                
+
                 <Label 
                     x:Name="DriverId" 
                     Content="DriverId" 
@@ -458,8 +458,8 @@
                     Grid.Column=" 1" 
                     Grid.Row="6" 
                     Margin="5" />
-            
-                    <StackPanel
+
+                <StackPanel
                     HorizontalAlignment="Center"
                     Orientation="Horizontal"
                     Grid.Column="0"
