@@ -5,7 +5,7 @@ namespace Formel1.Database
 {
     public class Formel1Context : DbContext
     {
-        public Formel1Context() : base() //"name=formel1Db"
+        public Formel1Context() : base("name=formel1Db")
         {
 
         }
